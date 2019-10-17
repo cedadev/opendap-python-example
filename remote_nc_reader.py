@@ -24,7 +24,7 @@ $ python remote_nc_reader.py <url> <var_id>
 Example:
 
 ```
-$ URL_DIR=http://data.ceda.ac.uk/badc/ukcp18/data/marine-sim/skew-trend/rcp85/skewSurgeTrend/latest/
+$ URL_DIR=http://dap.ceda.ac.uk/thredds/dodsC/badc/ukcp18/data/marine-sim/skew-trend/rcp85/skewSurgeTrend/latest/skewSurgeTrend_marine-sim_rcp85_trend_2007-2099.nc
 $ FILE_NAME=skewSurgeTrend_marine-sim_rcp85_trend_2007-2099.nc
 $ URL=${URL_DIR}/${FILE_NAME}
 $ VAR_ID=skewSurgeTrend
@@ -95,7 +95,7 @@ def cert_is_valid(cert_file, min_lifetime=0):
     :return: boolean
     """
     try:
-        with open(cert_file) as f:
+        with open(cert_file, 'rb') as f:
             crt_data = f.read()
     except IOError:
         return False
