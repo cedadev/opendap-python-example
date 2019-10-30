@@ -24,9 +24,7 @@ $ python remote_nc_reader.py <url> <var_id>
 Example:
 
 ```
-$ URL_DIR=http://dap.ceda.ac.uk/thredds/dodsC/badc/ukcp18/data/marine-sim/skew-trend/rcp85/skewSurgeTrend/latest/skewSurgeTrend_marine-sim_rcp85_trend_2007-2099.nc
-$ FILE_NAME=skewSurgeTrend_marine-sim_rcp85_trend_2007-2099.nc
-$ URL=${URL_DIR}/${FILE_NAME}
+$ URL=http://dap.ceda.ac.uk/thredds/dodsC/badc/ukcp18/data/marine-sim/skew-trend/rcp85/skewSurgeTrend/latest/skewSurgeTrend_marine-sim_rcp85_trend_2007-2099.nc
 $ VAR_ID=skewSurgeTrend
 
 $ python remote_nc_reader.py $URL $VAR_ID
