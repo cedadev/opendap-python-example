@@ -1,6 +1,6 @@
 # encoding: utf-8
 """
-remote_nc_reader.py
+nc_read_with_cert.py
 ===================
 
 Python script for reading a NetCDF file remotely from the CEDA archive.
@@ -18,7 +18,7 @@ netCDF4
 Usage:
 
 ```
-$ python remote_nc_reader.py <url> <var_id>
+$ python nc_read_with_cert.py <url> <var_id>
 ```
 
 Example:
@@ -27,7 +27,7 @@ Example:
 $ URL=http://dap.ceda.ac.uk/thredds/dodsC/badc/ukcp18/data/marine-sim/skew-trend/rcp85/skewSurgeTrend/latest/skewSurgeTrend_marine-sim_rcp85_trend_2007-2099.nc
 $ VAR_ID=skewSurgeTrend
 
-$ python remote_nc_reader.py $URL $VAR_ID
+$ python nc_read_with_cert.py $URL $VAR_ID
 ```
 
 """
@@ -158,7 +158,9 @@ def get_nc_dataset(url, var_id):
     :param var_id: Variable ID in NetCDF file [string]
     :return: netCDF4 Dataset object
     """
+    print("before")
     dataset = Dataset(url)
+    print("after")
 
 
     print('\n[INFO] Global attributes:')
@@ -169,6 +171,8 @@ def get_nc_dataset(url, var_id):
     print('\n[INFO] Dimensions:\n{}'.format(dataset.dimensions))
 
     print('\n[INFO] Max and min variable: {}'.format(var_id))
+    #variable = dataset.variables[var_id][0:0]
+    #print('\tMin: {:.6f}; Max: {:.6f}'.format(variable.min(), variable.max()))
     variable = dataset.variables[var_id][:]
     units = dataset.variables[var_id].units
     print('\tMin: {:.6f} {}; Max: {:.6f} {}'.format(variable.min(), units, variable.max(), units))
