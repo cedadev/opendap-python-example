@@ -98,9 +98,9 @@ def get_token():
             print("Please set CEDA_USERNAME and CEDA_PASSWORD as environment variables")
             return
 
-        token = b64encode(f"{username}:{password}".encode('utf-8')).decode("ascii")
+        credentials = b64encode(f"{username}:{password}".encode('utf-8')).decode("ascii")
         headers = {
-            "Authorization": f'Basic {token}',
+            "Authorization": f'Basic {credentials}',
         }
         response = requests.request("POST", TOKEN_URL, headers=headers)
         if response.status_code == 200:
