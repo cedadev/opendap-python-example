@@ -1,6 +1,6 @@
 # encoding: utf-8
 """
-nc_read_with_cert.py
+remote_nc_with_certificate.py
 ===================
 
 Python script for reading a NetCDF file remotely from the CEDA archive.
@@ -18,7 +18,7 @@ netCDF4
 Usage:
 
 ```
-$ python nc_read_with_cert.py <url> <var_id>
+$ python remote_nc_with_certificate.py <url> <var_id>
 ```
 
 Example:
@@ -27,7 +27,7 @@ Example:
 $ URL=http://dap.ceda.ac.uk/thredds/dodsC/badc/ukcp18/data/marine-sim/skew-trend/rcp85/skewSurgeTrend/latest/skewSurgeTrend_marine-sim_rcp85_trend_2007-2099.nc
 $ VAR_ID=skewSurgeTrend
 
-$ python nc_read_with_cert.py $URL $VAR_ID
+$ python remote_nc_with_certificate.py $URL $VAR_ID
 ```
 
 """
